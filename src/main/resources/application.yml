@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/vollmed_api
+    username: admin
+    password: admin
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    web:
+      pageable:
+        page-parameter: pageTest
+        size-parameter: sizeTest
+      sort:
+        sort-parameter: sortTest
+server:
+  error:
+    include-stacktrace: never
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678} # retrieve the JWT_SECRET environment variable. if it doesn't exist, use 12345678
